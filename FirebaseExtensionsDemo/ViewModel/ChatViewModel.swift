@@ -13,25 +13,10 @@ import FirebaseFunctions
 @Observable
 class ChatViewModel {
     
-    var streamChat: StreamChat?
-    
     var functions = Functions.functions()
     
-    var chatClient: ChatClient = {
-        var config = ChatClientConfig(apiKey: .init("<your-api-key>"))
-        config.isLocalStorageEnabled = true
-        config.applicationGroupIdentifier = "<your-bundle-id>"
-        
-        let client = ChatClient(config: config)
-        return client
-    }()
-    
-    init() {
-        streamChat = StreamChat(chatClient: chatClient)
-    }
-    
-    func connectUser(with id: String) async {
-        functions.httpsCallable("ext-auth-chat-getStreamUserToken").call(["uid": id]) { [weak self] result, error in
+    func connectUser(with id: String, to client: ChatClient) async {
+        functions.httpsCallable("ext-auth-chat-getStreamUserToken").call(["uid": id]) { result, error in
             if let error {
                 log.error("Error: \(error)")
                 return
@@ -43,7 +28,7 @@ class ChatViewModel {
             }
             
             // Call `connectUser` on our SDK to get started.
-            self?.chatClient.connectUser(
+            client.connectUser(
                 userInfo: .init(
                     id: id,
                 ),
