@@ -10,7 +10,7 @@ import FirebaseCore
 
 struct ContentView: View {
     
-    @State var viewModel = AuthViewModel()
+    @State var viewModel = FirebaseAuthViewModel()
     
     var body: some View {
         switch viewModel.authState {

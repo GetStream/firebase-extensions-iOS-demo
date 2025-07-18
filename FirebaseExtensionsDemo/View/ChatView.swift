@@ -15,12 +15,17 @@ struct ChatView: View {
     
     var userId: String
     
-    @State private var viewModel = ChatViewModel()
+    @State private var viewModel = StreamAuthViewModel()
     
     var body: some View {
         ChatChannelListView()
             .task {
                 await viewModel.connectUser(with: userId, to: chatClient)
+            }
+            .onDisappear {
+                Task {
+                    await viewModel.disconnectUser(from: chatClient)
+                }
             }
     }
 }

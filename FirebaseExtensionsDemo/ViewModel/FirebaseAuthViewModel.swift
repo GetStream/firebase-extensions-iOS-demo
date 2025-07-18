@@ -1,5 +1,5 @@
 //
-//  AuthViewModel.swift
+//  FirebaseAuthViewModel.swift
 //  FirebaseExtensionsDemo
 //
 //  Created by Stefan Blos on 09.07.25.
@@ -9,7 +9,7 @@ import SwiftUI
 import FirebaseAuth
 
 @Observable
-class AuthViewModel {
+class FirebaseAuthViewModel {
     
     private(set) var authState = AuthState.loading
     

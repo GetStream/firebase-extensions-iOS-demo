@@ -1,5 +1,5 @@
 //
-//  ChatViewModel.swift
+//  StreamAuthViewModel.swift
 //  FirebaseExtensionsDemo
 //
 //  Created by Stefan Blos on 10.07.25.
@@ -11,7 +11,7 @@ import StreamChatSwiftUI
 import FirebaseFunctions
 
 @Observable
-class ChatViewModel {
+class StreamAuthViewModel {
     
     var functions = Functions.functions()
     
@@ -41,5 +41,10 @@ class ChatViewModel {
                 }
             }
         }
+    }
+    
+    func disconnectUser(from client: ChatClient) async {
+        await client.disconnect()
+        
     }
 }

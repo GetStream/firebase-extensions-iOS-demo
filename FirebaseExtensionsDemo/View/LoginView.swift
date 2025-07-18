@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @State var viewModel: AuthViewModel
+    @State var viewModel: FirebaseAuthViewModel
     
     @State private var mail = ""
     @State private var password = ""
@@ -59,5 +59,5 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(viewModel: AuthViewModel())
+    LoginView(viewModel: FirebaseAuthViewModel())
 }
