@@ -22,7 +22,7 @@ In general, the Extensions are just [Cloud Functions](https://firebase.google.co
 - Same goes for whenever a Firebase user is _deleted_, it will also sync with the Stream Dashboard to remove the user there as well
 - It provides an endpoint (which is again a Cloud Function) to generate (and - less commonly - revoke) user tokens for signed-in users (necessary to authenticate with the Stream Dashboard)
 
-If you want to learn more, read the accompanying [blog post]().
+If you want to learn more, read the accompanying [blog post](https://getstream.io/blog/firebase-extension-ios-demo/).
 
 ## How to run it locally?
 
@@ -36,7 +36,8 @@ If you want to learn more, read the accompanying [blog post]().
 
 ## Where can I learn more?
 
-- [Blog post]()
+- [Blog post](https://getstream.io/blog/firebase-extension-ios-demo/)
+- [Video tutorial](https://youtu.be/ajlNzE6d9Hg)
 - [Stream's Swift SDK](https://getstream.io/chat/sdk/ios/)
 - [SwiftUI Chat App Tutorial](https://getstream.io/tutorials/ios-chat/)
 - [Stream's Video Calling SDK](https://getstream.io/video/docs/)
